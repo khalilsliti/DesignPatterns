@@ -1,3 +1,4 @@
+import Builder.Vehicule;
 import templatemethod.ExcelProcessor;
 import templatemethod.TextProcessor;
 
@@ -27,11 +28,18 @@ public class Main {
 
  */
 
-
+/*   Template Method Design Pattern
         ExcelProcessor excelProcessor = new ExcelProcessor();
         excelProcessor.readProcessSaveData();
         TextProcessor textProcessor = new TextProcessor();
-        textProcessor.readProcessSaveData();
+        textProcessor.readProcessSaveData();  */
+
+        /*   Builder design pattern */
+        Vehicule car = new Vehicule.VehiculeBuilder("turbo",4).setAirbags(true).build();
+        Vehicule bike = new Vehicule.VehiculeBuilder("bmw",2).build();
+
+        System.out.println(car.getEngine()+"\n"+car.getWheels()+"\n"+car.getAirbags());
+        System.out.println(bike.getEngine()+"\n"+bike.getWheels());
 
 
     }
